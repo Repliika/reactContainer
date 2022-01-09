@@ -1,6 +1,7 @@
 FROM node
 WORKDIR /app
-RUN npc install
+COPY appreact/package.json .
+RUN npm install
 COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]
