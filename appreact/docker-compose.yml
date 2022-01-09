@@ -6,6 +6,5 @@ services:
       - "3000:3000"
     volumes:
       - ./src:/app/src
-    environment:
-      - REACT_APP_NAME=Spiderman
-      - CHOKIDAR_USEPOLLING=true
+    env_file:
+      - ./.env
