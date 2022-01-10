@@ -1,0 +1,17 @@
+#Building stage
+FROM node as react_build
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+#How to insert ENV variable before the build, must be an ARG
+ARG REACT_APP_NAME
+ENV REACT_APP_NAME=${REACT_APP_NAME}
+# EXPOSE 3000
+# CMD ["npm", "start"]
+RUN npm run build
+
+#copy build artifacts from dev stage into prod nginx folder
+FROM nginx  
+#/app/build is where npm builds the js, css, html files.
+COPY --from=react_build /app/build /user/share/nginx/html

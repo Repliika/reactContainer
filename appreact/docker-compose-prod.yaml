@@ -1,0 +1,20 @@
+version: "3"
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+      #ARG allows us to pass it an argument to be referenced by an env variable inside dockerfile
+
+      #only need Name change for prod otherwise enter more args
+      args:
+        - REACT_APP_NAME=PROD
+    ports:
+      - "8080:80"
+    #environment:
+    #  - REACT_APP_NAME=PROD
+    #  - CHOKIDAR_USEPOLLING=true
+    #volumes:
+    #  - ./src:/app/src
+    #env_file:
+    #  - /.env

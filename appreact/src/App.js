@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> .
-          <p>your name is {process.env.REACT_APP_NAME}</p>
+          <p>ENVIRONMENT: {process.env.REACT_APP_NAME}</p>
 
         </p>
         <p>EDIT</p>
