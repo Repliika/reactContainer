@@ -2,11 +2,12 @@ version: "3"
 services:
   react-app:
     build: 
+    #using dev file as default, building with another compose file will replace it
       context: .
       dockerfile: Dockerfile.dev
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./src:/app/src
-    env_file:
-      - /.env
+    #ports:
+    #  - "3000:3000"
+    #volumes:
+    #  - ./src:/app/src
+    #env_file:
+    #  - /.env
