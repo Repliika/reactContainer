@@ -1,3 +1,6 @@
+*REMOVE the .env file as it was used to showcase another way of passing in environmental variables
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
